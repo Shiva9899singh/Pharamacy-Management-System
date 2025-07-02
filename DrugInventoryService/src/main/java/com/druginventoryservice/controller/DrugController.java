@@ -30,6 +30,10 @@ public class DrugController {
         List<Drug> allDrugs = this.drugService.getAllDrugs();
         return ResponseEntity.ok(allDrugs);
     }
+    @GetMapping("/getByName/{name}")
+    public ResponseEntity<Drug> getByName(@PathVariable String name) {
+        return ResponseEntity.ok(drugService.getDrugByName(name));
+    }
 
     @PutMapping("/updateDrugs/{drugName}")
     public ResponseEntity<Drug> updateDrugDetails(@Valid @RequestBody Drug drug, @PathVariable("drugName") String drugName) {
@@ -42,5 +46,9 @@ public class DrugController {
         this.drugService.deleteDrug(drugName);
         String message = "Drug with name '" + drugName + "' has been successfully deleted.";
         return new ResponseEntity<>(message,HttpStatus.OK);
+    }
+    @PutMapping("/updateQuantity/{name}")
+    public ResponseEntity<String> updateQuantity(@PathVariable String name, @RequestParam long quantityToReduce) {
+        return ResponseEntity.ok(drugService.updateQuantityOrDelete(name, quantityToReduce));
     }
 }

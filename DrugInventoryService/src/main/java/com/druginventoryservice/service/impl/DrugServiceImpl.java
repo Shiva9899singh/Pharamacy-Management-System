@@ -75,6 +75,13 @@ public class DrugServiceImpl implements DrugService {
             throw new DrugCreationException("Failed to update drug: " + drug.getDrugName(),e);
         }
     }
+    //to get Drug By Name
+    @Override
+    public Drug getDrugByName(String drugName) {
+        return drugRepo.findByDrugName(drugName)
+                .orElseThrow(() -> new DrugsNotFoundException("Drug not found: " + drugName));
+    }
+    
 
     @Override
     @Transactional
@@ -86,6 +93,24 @@ public class DrugServiceImpl implements DrugService {
             drugRepo.deleteByDrugName(drug.getDrugName());
         } catch (DataAccessException e) {
             throw new DrugCreationException("Failed to delete drug: " + drugName, e);
+        }
+        
+    }
+    @Override
+    public String updateQuantityOrDelete(String drugName, long quantityToReduce) {
+        Drug drug = getDrugByName(drugName);
+        if (drug.getQuantity() < quantityToReduce) {
+            throw new DrugCreationException("Insufficient quantity for: " + drugName);
+        }
+        long newQty = drug.getQuantity() - quantityToReduce;
+        if (newQty == 0) {
+            drugRepo.delete(drug);
+            return "Drug deleted after stockout.";
+        } else {
+            drug.setQuantity(newQty);
+            drug.setUpdatedAt(LocalDateTime.now());
+            drugRepo.save(drug);
+            return "Quantity updated.";
         }
     }
 
