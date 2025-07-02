@@ -1,15 +1,17 @@
 package com.pharmacy.OrderService.Service;
 
-import com.pharmacy.OrderService.Dto.OrderResponse;
-import com.pharmacy.OrderService.Entity.Order;
 import java.util.List;
 
+import com.pharmacy.OrderService.Dto.OrderRequest;
+import com.pharmacy.OrderService.Dto.OrderResponse;
+
 public interface OrderService {
-    OrderResponse placeOrder(Order order);
+   // OrderResponse placeOrder(Order order);
     List<OrderResponse> getAllOrders();
     OrderResponse verifyOrder(Long id);
-    OrderResponse markPickedUp(Long id);
+    OrderResponse markOrderAsPickedUp(Long id);
 	OrderResponse getOrderById(Long id);
+	OrderResponse placeOrder(OrderRequest request);
 	
 	
 }

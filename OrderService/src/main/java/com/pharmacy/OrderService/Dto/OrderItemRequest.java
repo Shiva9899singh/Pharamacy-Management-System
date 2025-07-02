@@ -7,9 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
-public class OrderItemResponse {
-    private Long orderItemId;
+public class OrderItemRequest {
     private String productId;
     private long quantity;
-    private double price;
 }

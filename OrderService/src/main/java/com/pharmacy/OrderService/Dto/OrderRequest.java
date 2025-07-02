@@ -1,4 +1,7 @@
+// dto/OrderRequest.java
 package com.pharmacy.OrderService.Dto;
+
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,9 +10,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
-public class OrderItemResponse {
-    private Long orderItemId;
-    private String productId;
-    private long quantity;
-    private double price;
+public class OrderRequest {
+    private List<OrderItemRequest> items;
 }

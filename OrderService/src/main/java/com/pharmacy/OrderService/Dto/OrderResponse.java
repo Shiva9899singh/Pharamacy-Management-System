@@ -1,17 +1,19 @@
 package com.pharmacy.OrderService.Dto;
 
-import lombok.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
 public class OrderResponse {
-    private long orderId;
-    private String userId;
-    private LocalDateTime orderDate;
-    private double totalAmount;
+    private Long orderId;
+    private boolean verified;
+    private boolean pickedUp;
+    private LocalDateTime createdAt;
     private List<OrderItemResponse> orderItems;
 }

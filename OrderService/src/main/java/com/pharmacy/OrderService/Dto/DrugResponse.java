@@ -7,9 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
-public class OrderItemResponse {
-    private Long orderItemId;
-    private String productId;
+public class DrugResponse {
+    private String drugName;
     private long quantity;
     private double price;
 }

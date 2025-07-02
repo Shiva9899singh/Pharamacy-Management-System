@@ -1,13 +1,20 @@
 package com.pharmacy.OrderService.Controller;
 
-import com.pharmacy.OrderService.Dto.OrderResponse;
-import com.pharmacy.OrderService.Entity.Order;
-import com.pharmacy.OrderService.Service.OrderService;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.pharmacy.OrderService.Dto.OrderRequest;
+import com.pharmacy.OrderService.Dto.OrderResponse;
+import com.pharmacy.OrderService.Service.OrderService;
 
 @RestController
 @RequestMapping("/orders")
@@ -16,27 +23,19 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @PostMapping("/placeorder")
-    public ResponseEntity<OrderResponse> placeOrder(@RequestBody Order order) {
-        return ResponseEntity.ok(orderService.placeOrder(order));
+    @PostMapping("/place")
+    public ResponseEntity<OrderResponse> placeOrder(@RequestBody OrderRequest request) {
+        return ResponseEntity.ok(orderService.placeOrder(request));
     }
-    @PostMapping("/bulk")
-    public ResponseEntity<List<OrderResponse>> placeMultipleOrders(@RequestBody List<Order> orders) {
-        List<OrderResponse> responses = orders.stream()
-            .map(orderService::placeOrder)
-            .toList();
-        return ResponseEntity.ok(responses);
-    }
-
 
     @GetMapping("/allorders")
     public ResponseEntity<List<OrderResponse>> getAllOrders() {
         return ResponseEntity.ok(orderService.getAllOrders());
     }
+
     @GetMapping("/{id}")
     public ResponseEntity<OrderResponse> getOrderById(@PathVariable Long id) {
-        OrderResponse order = orderService.getOrderById(id);
-        return ResponseEntity.ok(order);
+        return ResponseEntity.ok(orderService.getOrderById(id));
     }
 
     @PutMapping("/verify/{id}")
@@ -44,8 +43,8 @@ public class OrderController {
         return ResponseEntity.ok(orderService.verifyOrder(id));
     }
 
-    @PutMapping("/pickedup/{id}")
-    public ResponseEntity<OrderResponse> markPickedUp(@PathVariable Long id) {
-        return ResponseEntity.ok(orderService.markPickedUp(id));
+    @PutMapping("/pickup/{id}")
+    public ResponseEntity<OrderResponse> markOrderAsPickedUp(@PathVariable Long id) {
+        return ResponseEntity.ok(orderService.markOrderAsPickedUp(id));
     }
 }
