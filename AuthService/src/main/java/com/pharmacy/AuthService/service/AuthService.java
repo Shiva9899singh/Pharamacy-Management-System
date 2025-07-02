@@ -1,0 +1,63 @@
+package com.pharmacy.AuthService.service;
+
+import com.pharmacy.AuthService.entity.User;
+import com.pharmacy.AuthService.exception.UserAlreadyExistsException;
+import com.pharmacy.AuthService.exception.UserNotFoundException;
+import com.pharmacy.AuthService.repository.AuthRepository;
+import com.pharmacy.AuthService.util.JwtUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
+@Service
+public class AuthService {
+
+    @Autowired
+    private AuthRepository userRepository;
+
+    @Autowired
+    private PasswordEncoder encoder;
+
+    @Autowired
+    private JwtUtil jwtUtil;
+
+    public User registerUser(User user) {
+        Optional<User> existingUser = this.userRepository.findByUsername(user.getUsername());
+        if (existingUser.isPresent()) {
+            throw new UserAlreadyExistsException("User with username '" + user.getUsername() + "' already exists.");
+        }
+        user.setPassword(encoder.encode(user.getPassword()));
+        try {
+            return this.userRepository.save(user);
+        } catch (Exception e) {
+            throw new UserNotFoundException("Unexpected error while registering user with : " + user.getUsername());
+        }
+    }
+
+    public Optional<User> getUser(String username) {
+        Optional<User> existingUser = this.userRepository.findByUsername(username);
+        if (existingUser.isPresent()) {
+            throw new UserAlreadyExistsException("User with username '" + username + "' already exists.");
+        }
+        return existingUser;
+    }
+
+    public String generateToken(String username, String role) {
+        try {
+            return jwtUtil.generateToken(username, role);
+        } catch (Exception e) {
+            throw new RuntimeException("Unexpected Error while generating token for user with : " + username);
+        }
+    }
+
+    public void validateToken(String token) {
+        try {
+            jwtUtil.validateToken(token);;
+        } catch (Exception e) {
+            throw new RuntimeException("Unexpected Error while validating token for user");
+        }
+
+    }
+}
