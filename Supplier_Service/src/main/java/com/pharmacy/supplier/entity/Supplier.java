@@ -17,8 +17,15 @@ public class Supplier {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Supplier name is required")
     private String name;
+    
+    @NotBlank(message = "Contact number is required")
+    @Pattern(regexp = "^[0-9]{10}$", message = "Contact number must be 10 digits")
     private String contact;
+
+    @NotBlank(message = "Email is required")
+    @Email(message = "Email should be valid")
     private String email;
 }
 
