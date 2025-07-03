@@ -46,4 +46,135 @@
 2025-07-03T14:41:22.728+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
 2025-07-03T14:41:22.728+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
 2025-07-03T14:41:22.728+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2025-07-03T14:41:22.728+05:30  INFO 11976 --
+2025-07-03T14:41:22.728+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-07-03T14:41:23.416+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-07-03T14:41:23.421+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-07-03T14:41:23.426+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-07-03T14:41:23.432+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1751533883430 with initial instances count: 2
+2025-07-03T14:41:23.448+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application DRUG-INVENTORY with eureka with status UP
+2025-07-03T14:41:23.450+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1751533883450, current=UP, previous=STARTING]
+2025-07-03T14:41:23.456+05:30  INFO 11976 --- [DRUG-INVENTORY] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DRUG-INVENTORY/localhost:DRUG-INVENTORY:9092: registering service...
+2025-07-03T14:41:23.524+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9092 (http) with context path '/'
+2025-07-03T14:41:23.526+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 9092
+2025-07-03T14:41:23.564+05:30  INFO 11976 --- [DRUG-INVENTORY] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DRUG-INVENTORY/localhost:DRUG-INVENTORY:9092 - registration status: 204
+2025-07-03T14:41:24.548+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-07-03T14:41:24.585+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] c.d.DrugInventoryServiceApplication      : Started DrugInventoryServiceApplication in 15.587 seconds (process running for 17.232)
+2025-07-03T14:41:25.289+05:30  INFO 11976 --- [DRUG-INVENTORY] [RMI TCP Connection(6)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-03T14:41:25.290+05:30  INFO 11976 --- [DRUG-INVENTORY] [RMI TCP Connection(6)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-07-03T14:41:25.293+05:30  INFO 11976 --- [DRUG-INVENTORY] [RMI TCP Connection(6)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-07-03T14:46:22.732+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T14:47:50.856+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-1] c.d.aspect.LoggingAspect                 : Invoking method: DrugController#addDrugs
+2025-07-03T14:47:50.856+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-1] c.d.aspect.LoggingAspect                 : Invoking method: DrugServiceImpl#addDrugs
+2025-07-03T14:47:50.858+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-1] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#findByDrugName
+2025-07-03T14:47:51.002+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-1] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#save
+2025-07-03T14:48:14.454+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-2] c.d.aspect.LoggingAspect                 : Invoking method: DrugController#addDrugs
+2025-07-03T14:48:14.455+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-2] c.d.aspect.LoggingAspect                 : Invoking method: DrugServiceImpl#addDrugs
+2025-07-03T14:48:14.456+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-2] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#findByDrugName
+2025-07-03T14:48:14.463+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-2] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#save
+2025-07-03T14:48:35.815+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-3] c.d.aspect.LoggingAspect                 : Invoking method: DrugController#addDrugs
+2025-07-03T14:48:35.815+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-3] c.d.aspect.LoggingAspect                 : Invoking method: DrugServiceImpl#addDrugs
+2025-07-03T14:48:35.817+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-3] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#findByDrugName
+2025-07-03T14:48:35.820+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-3] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#save
+2025-07-03T14:50:48.029+05:30  WARN 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+2025-07-03T14:50:53.849+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-6] c.d.aspect.LoggingAspect                 : Invoking method: DrugController#fetchAllDrugs
+2025-07-03T14:50:53.850+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-6] c.d.aspect.LoggingAspect                 : Invoking method: DrugServiceImpl#getAllDrugs
+2025-07-03T14:50:53.851+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-6] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#findAll
+2025-07-03T14:51:22.746+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T14:52:53.754+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-8] c.d.aspect.LoggingAspect                 : Invoking method: DrugController#getByName
+2025-07-03T14:52:53.754+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-8] c.d.aspect.LoggingAspect                 : Invoking method: DrugServiceImpl#getDrugByName
+2025-07-03T14:52:53.754+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-8] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#findByDrugName
+2025-07-03T14:52:53.781+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-9] c.d.aspect.LoggingAspect                 : Invoking method: DrugController#updateQuantity
+2025-07-03T14:52:53.781+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-9] c.d.aspect.LoggingAspect                 : Invoking method: DrugServiceImpl#updateQuantityOrDelete
+2025-07-03T14:52:53.783+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-9] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#findByDrugName
+2025-07-03T14:52:53.787+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-9] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#save
+2025-07-03T14:52:53.807+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-10] c.d.aspect.LoggingAspect                 : Invoking method: DrugController#getByName
+2025-07-03T14:52:53.807+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-10] c.d.aspect.LoggingAspect                 : Invoking method: DrugServiceImpl#getDrugByName
+2025-07-03T14:52:53.807+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-10] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#findByDrugName
+2025-07-03T14:52:53.817+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-1] c.d.aspect.LoggingAspect                 : Invoking method: DrugController#updateQuantity
+2025-07-03T14:52:53.818+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-1] c.d.aspect.LoggingAspect                 : Invoking method: DrugServiceImpl#updateQuantityOrDelete
+2025-07-03T14:52:53.818+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-1] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#findByDrugName
+2025-07-03T14:52:53.821+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-1] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#save
+2025-07-03T14:54:05.321+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-3] c.d.aspect.LoggingAspect                 : Invoking method: DrugController#fetchAllDrugs
+2025-07-03T14:54:05.322+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-3] c.d.aspect.LoggingAspect                 : Invoking method: DrugServiceImpl#getAllDrugs
+2025-07-03T14:54:05.322+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-3] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#findAll
+2025-07-03T14:55:51.189+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-5] c.d.aspect.LoggingAspect                 : Invoking method: DrugController#getByName
+2025-07-03T14:55:51.189+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-5] c.d.aspect.LoggingAspect                 : Invoking method: DrugServiceImpl#getDrugByName
+2025-07-03T14:55:51.189+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-5] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#findByDrugName
+2025-07-03T14:55:51.198+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-6] c.d.aspect.LoggingAspect                 : Invoking method: DrugController#updateQuantity
+2025-07-03T14:55:51.198+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-6] c.d.aspect.LoggingAspect                 : Invoking method: DrugServiceImpl#updateQuantityOrDelete
+2025-07-03T14:55:51.198+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-6] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#findByDrugName
+2025-07-03T14:55:51.204+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-6] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#delete
+2025-07-03T14:55:51.222+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-7] c.d.aspect.LoggingAspect                 : Invoking method: DrugController#getByName
+2025-07-03T14:55:51.223+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-7] c.d.aspect.LoggingAspect                 : Invoking method: DrugServiceImpl#getDrugByName
+2025-07-03T14:55:51.223+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-7] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#findByDrugName
+2025-07-03T14:55:51.229+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-8] c.d.aspect.LoggingAspect                 : Invoking method: DrugController#updateQuantity
+2025-07-03T14:55:51.230+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-8] c.d.aspect.LoggingAspect                 : Invoking method: DrugServiceImpl#updateQuantityOrDelete
+2025-07-03T14:55:51.230+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-8] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#findByDrugName
+2025-07-03T14:55:51.233+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-8] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#save
+2025-07-03T14:56:04.268+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-9] c.d.aspect.LoggingAspect                 : Invoking method: DrugController#fetchAllDrugs
+2025-07-03T14:56:04.268+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-9] c.d.aspect.LoggingAspect                 : Invoking method: DrugServiceImpl#getAllDrugs
+2025-07-03T14:56:04.268+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-9] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#findAll
+2025-07-03T14:56:22.758+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T14:57:13.052+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-2] c.d.aspect.LoggingAspect                 : Invoking method: DrugController#addDrugs
+2025-07-03T14:57:13.053+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-2] c.d.aspect.LoggingAspect                 : Invoking method: DrugServiceImpl#addDrugs
+2025-07-03T14:57:13.053+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-2] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#findByDrugName
+2025-07-03T14:57:13.058+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-2] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#save
+2025-07-03T14:57:42.198+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-3] c.d.aspect.LoggingAspect                 : Invoking method: DrugController#addDrugs
+2025-07-03T14:57:42.198+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-3] c.d.aspect.LoggingAspect                 : Invoking method: DrugServiceImpl#addDrugs
+2025-07-03T14:57:42.198+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-3] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#findByDrugName
+2025-07-03T14:57:42.205+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-3] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#save
+2025-07-03T14:58:17.165+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-4] c.d.aspect.LoggingAspect                 : Invoking method: DrugController#addDrugs
+2025-07-03T14:58:17.166+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-4] c.d.aspect.LoggingAspect                 : Invoking method: DrugServiceImpl#addDrugs
+2025-07-03T14:58:17.167+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-4] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#findByDrugName
+2025-07-03T14:58:17.172+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-4] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#save
+2025-07-03T15:01:22.760+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T15:10:08.712+05:30  WARN 11976 --- [DRUG-INVENTORY] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m52s336ms447µs700ns).
+2025-07-03T15:11:45.087+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T15:16:45.101+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T15:21:45.108+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T15:26:45.123+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T15:31:45.137+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T15:36:45.149+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T15:41:45.152+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T15:46:45.157+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T15:51:45.161+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T15:56:45.163+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T16:01:45.165+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T16:06:45.167+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T16:11:45.170+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T16:16:45.172+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T16:21:45.173+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T16:26:46.393+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T16:31:46.419+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T17:09:35.134+05:30  WARN 11976 --- [DRUG-INVENTORY] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=34m54s374ms757µs600ns).
+2025-07-03T17:11:10.783+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T17:16:10.794+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T17:21:10.807+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T17:26:10.814+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T17:31:10.829+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T17:36:10.838+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T17:41:10.853+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T17:46:10.856+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T17:51:10.870+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T17:56:10.876+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T18:01:10.880+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T18:06:10.889+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T18:07:06.723+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-6] c.d.aspect.LoggingAspect                 : Invoking method: DrugController#getByName
+2025-07-03T18:07:06.724+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-6] c.d.aspect.LoggingAspect                 : Invoking method: DrugServiceImpl#getDrugByName
+2025-07-03T18:07:06.724+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-6] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#findByDrugName
+2025-07-03T18:07:06.819+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-7] c.d.aspect.LoggingAspect                 : Invoking method: DrugController#updateQuantity
+2025-07-03T18:07:06.819+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-7] c.d.aspect.LoggingAspect                 : Invoking method: DrugServiceImpl#updateQuantityOrDelete
+2025-07-03T18:07:06.820+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-7] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#findByDrugName
+2025-07-03T18:07:06.824+05:30  INFO 11976 --- [DRUG-INVENTORY] [http-nio-9092-exec-7] c.d.aspect.LoggingAspect                 : Invoking method: $Proxy173#save
+2025-07-03T18:11:10.896+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T18:16:10.913+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T18:21:10.928+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T18:26:10.936+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T18:31:10.943+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T18:36:10.953+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T18:41:10.965+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T18:46:10.976+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T18:51:10.990+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T18:56:11.005+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T19:01:11.010+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T19:06:11.017+05:30  INFO 11976 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
