@@ -1,11 +1,7 @@
 package com.pharmacy.AuthService.controller;
 
-import com.pharmacy.AuthService.dto.AuthRequest;
-import com.pharmacy.AuthService.entity.User;
-import com.pharmacy.AuthService.exception.InvalidCredentialsException;
-import com.pharmacy.AuthService.service.AuthService;
-import com.pharmacy.AuthService.service.CustomUserDetailsService;
-import jakarta.validation.Valid;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
@@ -13,12 +9,23 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.*;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
+import com.pharmacy.AuthService.dto.AuthRequest;
+import com.pharmacy.AuthService.entity.User;
+import com.pharmacy.AuthService.exception.InvalidCredentialsException;
+import com.pharmacy.AuthService.exception.UserNotFoundException;
+import com.pharmacy.AuthService.service.AuthService;
+import com.pharmacy.AuthService.service.CustomUserDetailsService;
 
-import java.util.Optional;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/auth")
@@ -64,6 +71,14 @@ public class AuthController {
         authService.validateToken(token);
         return ResponseEntity.ok("Token is valid!!");
     }
+    @GetMapping("/user-by-username")
+    public ResponseEntity<User> getUserByUsername(@RequestParam("username") String username) {
+        Optional<User> user = authService.getUserByUsername(username);
+        return user.map(ResponseEntity::ok)
+                   .orElseThrow(() -> new UserNotFoundException("User not found with username: " + username));
+    }
+
+    
 
 
 }

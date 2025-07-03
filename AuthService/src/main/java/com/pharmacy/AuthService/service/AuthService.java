@@ -1,15 +1,16 @@
 package com.pharmacy.AuthService.service;
 
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
 import com.pharmacy.AuthService.entity.User;
 import com.pharmacy.AuthService.exception.UserAlreadyExistsException;
 import com.pharmacy.AuthService.exception.UserNotFoundException;
 import com.pharmacy.AuthService.repository.AuthRepository;
 import com.pharmacy.AuthService.util.JwtUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 public class AuthService {
@@ -43,6 +44,8 @@ public class AuthService {
         }
         return existingUser;
     }
+    
+
 
     public String generateToken(String username, String role) {
         try {
@@ -59,5 +62,9 @@ public class AuthService {
             throw new RuntimeException("Unexpected Error while validating token for user");
         }
 
+    }
+    //Get User By name
+    public Optional<User> getUserByUsername(String username) {
+        return userRepository.findByUsername(username);
     }
 }

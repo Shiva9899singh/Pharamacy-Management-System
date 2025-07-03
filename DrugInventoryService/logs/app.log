@@ -1,24 +1,24 @@
-2025-07-02T15:04:27.641+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] c.d.DrugInventoryServiceApplication      : Starting DrugInventoryServiceApplication using Java 21.0.7 with PID 24972 (C:\Users\SHISINGH\Downloads\DrugInventoryService\DrugInventoryService\target\classes started by shisingh in C:\Users\SHISINGH\Downloads\DrugInventoryService\DrugInventoryService)
-2025-07-02T15:04:27.644+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] c.d.DrugInventoryServiceApplication      : No active profile set, falling back to 1 default profile: "default"
-2025-07-02T15:04:27.747+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-07-02T15:04:27.752+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-07-02T15:04:30.348+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-07-02T15:04:30.561+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 191 ms. Found 1 JPA repository interface.
-2025-07-02T15:04:31.074+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fd237802-283a-3047-9412-6825e049c7ce
-2025-07-02T15:04:32.687+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9092 (http)
-2025-07-02T15:04:32.705+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-07-02T15:04:32.706+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.42]
-2025-07-02T15:04:32.845+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-07-02T15:04:32.846+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5092 ms
-2025-07-02T15:04:33.649+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-07-02T15:04:33.723+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.18.Final
-2025-07-02T15:04:33.833+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-07-02T15:04:34.555+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-07-02T15:04:34.648+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-07-02T15:04:35.043+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4f14b595
-2025-07-02T15:04:35.045+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-07-02T15:04:35.129+05:30  WARN 24972 --- [DRUG-INVENTORY] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-07-02T15:04:35.200+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-07-03T14:41:10.650+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] c.d.DrugInventoryServiceApplication      : Starting DrugInventoryServiceApplication using Java 21.0.7 with PID 11976 (C:\Users\SHISINGH\Pharamacy-Management-System\DrugInventoryService\target\classes started by shisingh in C:\Users\SHISINGH\Pharamacy-Management-System\DrugInventoryService)
+2025-07-03T14:41:10.659+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] c.d.DrugInventoryServiceApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-07-03T14:41:10.734+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-03T14:41:10.735+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-03T14:41:12.694+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-03T14:41:12.852+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 149 ms. Found 1 JPA repository interface.
+2025-07-03T14:41:13.145+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fd237802-283a-3047-9412-6825e049c7ce
+2025-07-03T14:41:14.198+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9092 (http)
+2025-07-03T14:41:14.212+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-03T14:41:14.212+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.42]
+2025-07-03T14:41:14.295+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-03T14:41:14.296+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3560 ms
+2025-07-03T14:41:14.870+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-03T14:41:14.946+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.18.Final
+2025-07-03T14:41:14.982+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-03T14:41:15.460+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-03T14:41:15.501+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-07-03T14:41:15.994+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5d2e36ec
+2025-07-03T14:41:15.998+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-07-03T14:41:16.076+05:30  WARN 11976 --- [DRUG-INVENTORY] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-03T14:41:16.122+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 17.4
@@ -26,122 +26,24 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-07-02T15:04:36.528+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-07-02T15:04:36.616+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-07-02T15:04:37.211+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-07-02T15:04:38.105+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] c.d.aspect.LoggingAspect                 : Invoking method: SwaggerConfig$$SpringCGLIB$$0#customOpenAPI
-2025-07-02T15:04:38.391+05:30  WARN 24972 --- [DRUG-INVENTORY] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-07-02T15:04:40.360+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2025-07-02T15:04:41.212+05:30  WARN 24972 --- [DRUG-INVENTORY] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2025-07-02T15:04:42.239+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2025-07-02T15:04:42.291+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2025-07-02T15:04:42.443+05:30  WARN 24972 --- [DRUG-INVENTORY] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2025-07-02T15:04:42.464+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
-2025-07-02T15:04:42.736+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2025-07-02T15:04:42.810+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2025-07-02T15:04:42.822+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2025-07-02T15:04:42.838+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2025-07-02T15:04:42.838+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2025-07-02T15:04:42.838+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2025-07-02T15:04:42.839+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2025-07-02T15:04:42.839+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2025-07-02T15:04:42.839+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2025-07-02T15:04:42.840+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2025-07-02T15:04:43.664+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2025-07-02T15:04:43.673+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2025-07-02T15:04:43.678+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2025-07-02T15:04:43.683+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1751448883681 with initial instances count: 2
-2025-07-02T15:04:43.702+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application DRUG-INVENTORY with eureka with status UP
-2025-07-02T15:04:43.704+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1751448883703, current=UP, previous=STARTING]
-2025-07-02T15:04:43.708+05:30  INFO 24972 --- [DRUG-INVENTORY] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DRUG-INVENTORY/localhost:DRUG-INVENTORY:9092: registering service...
-2025-07-02T15:04:43.787+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9092 (http) with context path '/'
-2025-07-02T15:04:43.788+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 9092
-2025-07-02T15:04:43.819+05:30  INFO 24972 --- [DRUG-INVENTORY] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DRUG-INVENTORY/localhost:DRUG-INVENTORY:9092 - registration status: 204
-2025-07-02T15:04:44.806+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2025-07-02T15:04:44.852+05:30  INFO 24972 --- [DRUG-INVENTORY] [restartedMain] c.d.DrugInventoryServiceApplication      : Started DrugInventoryServiceApplication in 19.302 seconds (process running for 21.18)
-2025-07-02T15:04:45.127+05:30  INFO 24972 --- [DRUG-INVENTORY] [RMI TCP Connection(9)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-07-02T15:04:45.127+05:30  INFO 24972 --- [DRUG-INVENTORY] [RMI TCP Connection(9)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-07-02T15:04:45.130+05:30  INFO 24972 --- [DRUG-INVENTORY] [RMI TCP Connection(9)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2025-07-02T15:06:15.198+05:30  INFO 24972 --- [DRUG-INVENTORY] [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-07-02T15:06:15.200+05:30  INFO 24972 --- [DRUG-INVENTORY] [RMI TCP Connection(11)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application DRUG-INVENTORY with eureka with status DOWN
-2025-07-02T15:06:15.201+05:30  INFO 24972 --- [DRUG-INVENTORY] [RMI TCP Connection(11)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1751448975201, current=DOWN, previous=UP]
-2025-07-02T15:06:15.201+05:30  INFO 24972 --- [DRUG-INVENTORY] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DRUG-INVENTORY/localhost:DRUG-INVENTORY:9092: registering service...
-2025-07-02T15:06:15.207+05:30  INFO 24972 --- [DRUG-INVENTORY] [RMI TCP Connection(11)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-07-02T15:06:15.216+05:30  INFO 24972 --- [DRUG-INVENTORY] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DRUG-INVENTORY/localhost:DRUG-INVENTORY:9092 - registration status: 204
-2025-07-02T15:06:15.239+05:30  INFO 24972 --- [DRUG-INVENTORY] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-07-02T15:06:15.270+05:30  INFO 24972 --- [DRUG-INVENTORY] [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-07-02T15:06:15.281+05:30  INFO 24972 --- [DRUG-INVENTORY] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-07-02T15:06:15.321+05:30  INFO 24972 --- [DRUG-INVENTORY] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-07-02T15:06:15.323+05:30  INFO 24972 --- [DRUG-INVENTORY] [RMI TCP Connection(11)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2025-07-02T15:06:18.328+05:30  INFO 24972 --- [DRUG-INVENTORY] [RMI TCP Connection(11)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
-2025-07-02T15:06:18.351+05:30  INFO 24972 --- [DRUG-INVENTORY] [RMI TCP Connection(11)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DRUG-INVENTORY/localhost:DRUG-INVENTORY:9092 - deregister  status: 200
-2025-07-02T15:06:18.352+05:30  INFO 24972 --- [DRUG-INVENTORY] [RMI TCP Connection(11)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2025-07-02T15:09:14.489+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] c.d.DrugInventoryServiceApplication      : Starting DrugInventoryServiceApplication using Java 21.0.7 with PID 8156 (C:\Users\SHISINGH\Downloads\DrugInventoryService\DrugInventoryService\target\classes started by shisingh in C:\Users\SHISINGH\Downloads\DrugInventoryService\DrugInventoryService)
-2025-07-02T15:09:14.492+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] c.d.DrugInventoryServiceApplication      : No active profile set, falling back to 1 default profile: "default"
-2025-07-02T15:09:14.564+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-07-02T15:09:14.565+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-07-02T15:09:17.272+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-07-02T15:09:17.521+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 237 ms. Found 1 JPA repository interface.
-2025-07-02T15:09:18.045+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fd237802-283a-3047-9412-6825e049c7ce
-2025-07-02T15:09:19.736+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9092 (http)
-2025-07-02T15:09:19.782+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-07-02T15:09:19.783+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.42]
-2025-07-02T15:09:19.973+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-07-02T15:09:19.975+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5407 ms
-2025-07-02T15:09:20.913+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-07-02T15:09:21.000+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.18.Final
-2025-07-02T15:09:21.051+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-07-02T15:09:21.483+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-07-02T15:09:21.521+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-07-02T15:09:21.882+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3b3985eb
-2025-07-02T15:09:21.886+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-07-02T15:09:21.958+05:30  WARN 8156 --- [DRUG-INVENTORY] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-07-02T15:09:21.985+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 17.4
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-07-02T15:09:23.216+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-07-02T15:09:23.287+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-07-02T15:09:23.866+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-07-02T15:09:24.676+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] c.d.aspect.LoggingAspect                 : Invoking method: SwaggerConfig$$SpringCGLIB$$0#customOpenAPI
-2025-07-02T15:09:24.841+05:30  WARN 8156 --- [DRUG-INVENTORY] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-07-02T15:09:26.730+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2025-07-02T15:09:27.574+05:30  WARN 8156 --- [DRUG-INVENTORY] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2025-07-02T15:09:28.611+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2025-07-02T15:09:28.678+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
-2025-07-02T15:09:28.792+05:30  WARN 8156 --- [DRUG-INVENTORY] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2025-07-02T15:09:28.803+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
-2025-07-02T15:09:28.968+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2025-07-02T15:09:29.003+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2025-07-02T15:09:29.012+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2025-07-02T15:09:29.027+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
-2025-07-02T15:09:29.028+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
-2025-07-02T15:09:29.028+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
-2025-07-02T15:09:29.028+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
-2025-07-02T15:09:29.028+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
-2025-07-02T15:09:29.028+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
-2025-07-02T15:09:29.028+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
-2025-07-02T15:09:29.676+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
-2025-07-02T15:09:29.681+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
-2025-07-02T15:09:29.685+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
-2025-07-02T15:09:29.688+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1751449169687 with initial instances count: 2
-2025-07-02T15:09:29.701+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application DRUG-INVENTORY with eureka with status UP
-2025-07-02T15:09:29.702+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1751449169702, current=UP, previous=STARTING]
-2025-07-02T15:09:29.705+05:30  INFO 8156 --- [DRUG-INVENTORY] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DRUG-INVENTORY/localhost:DRUG-INVENTORY:9092: registering service...
-2025-07-02T15:09:29.744+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9092 (http) with context path '/'
-2025-07-02T15:09:29.745+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 9092
-2025-07-02T15:09:29.768+05:30  INFO 8156 --- [DRUG-INVENTORY] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_DRUG-INVENTORY/localhost:DRUG-INVENTORY:9092 - registration status: 204
-2025-07-02T15:09:30.761+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
-2025-07-02T15:09:30.796+05:30  INFO 8156 --- [DRUG-INVENTORY] [restartedMain] c.d.DrugInventoryServiceApplication      : Started DrugInventoryServiceApplication in 18.352 seconds (process running for 20.193)
-2025-07-02T15:09:31.178+05:30  INFO 8156 --- [DRUG-INVENTORY] [RMI TCP Connection(7)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-07-02T15:09:31.179+05:30  INFO 8156 --- [DRUG-INVENTORY] [RMI TCP Connection(7)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-07-02T15:09:31.183+05:30  INFO 8156 --- [DRUG-INVENTORY] [RMI TCP Connection(7)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2025-07-02T15:14:29.046+05:30  INFO 8156 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2025-07-02T15:19:29.051+05:30  INFO 8156 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2025-07-02T15:22:58.545+05:30  INFO 8156 --- [DRUG-INVENTORY] [http-nio-9092-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 430 ms
-2025-07-02T15:24:29.065+05:30  INFO 8156 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
-2025-07-02T15:29:29.077+05:30  INFO 8156 --- [DRUG-INVENTORY] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T14:41:17.348+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-03T14:41:17.422+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-03T14:41:17.988+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-07-03T14:41:18.610+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] c.d.aspect.LoggingAspect                 : Invoking method: SwaggerConfig$$SpringCGLIB$$0#customOpenAPI
+2025-07-03T14:41:18.781+05:30  WARN 11976 --- [DRUG-INVENTORY] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-03T14:41:20.598+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-07-03T14:41:21.381+05:30  WARN 11976 --- [DRUG-INVENTORY] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-07-03T14:41:22.404+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2025-07-03T14:41:22.454+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-07-03T14:41:22.526+05:30  WARN 11976 --- [DRUG-INVENTORY] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-07-03T14:41:22.535+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2025-07-03T14:41:22.676+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-07-03T14:41:22.709+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-07-03T14:41:22.714+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-07-03T14:41:22.727+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-07-03T14:41:22.727+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-07-03T14:41:22.728+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-07-03T14:41:22.728+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-07-03T14:41:22.728+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-07-03T14:41:22.728+05:30  INFO 11976 --- [DRUG-INVENTORY] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-07-03T14:41:22.728+05:30  INFO 11976 --

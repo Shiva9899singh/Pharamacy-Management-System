@@ -5,19 +5,24 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import com.pharmacy.OrderService.Dto.DrugResponse;
 import com.pharmacy.OrderService.Dto.OrderItemResponse;
 import com.pharmacy.OrderService.Dto.OrderRequest;
 import com.pharmacy.OrderService.Dto.OrderResponse;
+import com.pharmacy.OrderService.Dto.UserResponse;
 import com.pharmacy.OrderService.Entity.Order;
 import com.pharmacy.OrderService.Entity.OrderItem;
 import com.pharmacy.OrderService.Exception.OrderException;
-import com.pharmacy.OrderService.Exception.ResourceNotFoundException;
 import com.pharmacy.OrderService.Repository.OrderRepository;
+import com.pharmacy.OrderService.Service.KafkaProducerService;
 import com.pharmacy.OrderService.Service.OrderService;
 import com.pharmacy.OrderService.client.DrugInventoryClient;
+import com.pharmacy.OrderService.client.UserClient;
+
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -26,6 +31,15 @@ public class OrderServiceImpl implements OrderService {
     private OrderRepository orderRepository;
     @Autowired
     private DrugInventoryClient drugClient;
+    @Autowired
+    private UserClient userClient;
+    @Autowired
+    private KafkaTemplate<String, Object> kafkaTemplate;
+    @Autowired
+    private KafkaProducerService kafkaProducerService;
+
+    @Value("${spring.kafka.topic.order}")
+    private String orderTopic;
     
     private OrderResponse mapToResponse(Order order) {
         List<OrderItemResponse> items = order.getItems().stream().map(item ->
@@ -45,18 +59,72 @@ public class OrderServiceImpl implements OrderService {
                 .build();
     }
 
+//    @Override
+//    public OrderResponse placeOrder(OrderRequest request, String username) {
+//
+//        if (request.getItems() == null || request.getItems().isEmpty()) {
+//            throw new OrderException("Order must contain at least one item.");
+//        }
+//
+//        // Step 1: Get User Email from AuthService
+//        UserResponse user = userClient.getUserByUsername(username);
+//        String email = user.getEmail();
+//
+//        // Step 2: Prepare Order Items
+//        List<OrderItem> orderItems = request.getItems().stream().map(item -> {
+//            DrugResponse drug = drugClient.getDrugByName(item.getProductId());
+//
+//            if (drug.getQuantity() < item.getQuantity()) {
+//                throw new OrderException("Insufficient quantity for drug: " + item.getProductId());
+//            }
+//
+//            drugClient.updateDrugQuantity(item.getProductId(), item.getQuantity());
+//
+//            return OrderItem.builder()
+//                    .productId(item.getProductId())
+//                    .quantity(item.getQuantity())
+//                    .price(drug.getPrice())
+//                    .build();
+//        }).collect(Collectors.toList());
+//
+//        // Step 3: Create Order
+//        Order order = Order.builder()
+//                .createdAt(LocalDateTime.now())
+//                .verified(false)
+//                .pickedUp(false)
+//                .email(email) // <-- Set email in Order entity
+//                .items(orderItems)
+//                .build();
+//
+//        orderItems.forEach(item -> item.setOrder(order));
+//
+//        Order saved = orderRepository.save(order);
+//
+//        // Step 4: Send Kafka Message
+//        String message = String.format("Order placed successfully! ID: %d, Email: %s", saved.getOrderId(), email);
+//        kafkaTemplate.send(orderTopic, message);
+//
+//        return mapToResponse(saved);
+//    }
     @Override
-    public OrderResponse placeOrder(OrderRequest request) {
-    	if (request.getItems() == null || request.getItems().isEmpty()) {
+    public OrderResponse placeOrder(OrderRequest request, String username) {
+
+        if (request.getItems() == null || request.getItems().isEmpty()) {
             throw new OrderException("Order must contain at least one item.");
         }
+
+        // Step 1: Get User Email from AuthService
+        UserResponse user = userClient.getUserByUsername(username);
+        String email = user.getEmail();
+
+        // Step 2: Prepare Order Items
         List<OrderItem> orderItems = request.getItems().stream().map(item -> {
             DrugResponse drug = drugClient.getDrugByName(item.getProductId());
-            
+
             if (drug.getQuantity() < item.getQuantity()) {
                 throw new OrderException("Insufficient quantity for drug: " + item.getProductId());
             }
-            
+
             drugClient.updateDrugQuantity(item.getProductId(), item.getQuantity());
 
             return OrderItem.builder()
@@ -66,17 +134,31 @@ public class OrderServiceImpl implements OrderService {
                     .build();
         }).collect(Collectors.toList());
 
+        // Step 3: Create Order
         Order order = Order.builder()
                 .createdAt(LocalDateTime.now())
                 .verified(false)
                 .pickedUp(false)
+                .email(email) // Save email if the Order entity has this field
                 .items(orderItems)
                 .build();
 
         orderItems.forEach(item -> item.setOrder(order));
+
         Order saved = orderRepository.save(order);
+
+        // Step 4: Enrich UserResponse with order info (optional)
+        String message = "Hi " + user.getUsername() + ", your order (ID: " + saved.getOrderId() + ") was placed successfully!";
+        
+        // You can either extend UserResponse to include message and orderId
+        // or send user as-is and interpret the event accordingly in NotificationService
+
+        kafkaTemplate.send(orderTopic, user); // Sending UserResponse directly
+
         return mapToResponse(saved);
     }
+
+    
 
 
     @Override

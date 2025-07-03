@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,8 +26,13 @@ public class OrderController {
 
     @PostMapping("/place")
     public ResponseEntity<OrderResponse> placeOrder(@RequestBody OrderRequest request) {
-        return ResponseEntity.ok(orderService.placeOrder(request));
+        // Extract username from Spring Security context
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        
+        // Call updated service method
+        return ResponseEntity.ok(orderService.placeOrder(request, username));
     }
+
 
     @GetMapping("/allorders")
     public ResponseEntity<List<OrderResponse>> getAllOrders() {
