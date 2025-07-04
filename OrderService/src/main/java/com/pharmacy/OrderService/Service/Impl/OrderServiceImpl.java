@@ -11,9 +11,9 @@ import org.springframework.stereotype.Service;
 
 import com.pharmacy.OrderService.Dto.DrugResponse;
 import com.pharmacy.OrderService.Dto.OrderItemResponse;
+import com.pharmacy.OrderService.Dto.OrderPlacedEvent;
 import com.pharmacy.OrderService.Dto.OrderRequest;
 import com.pharmacy.OrderService.Dto.OrderResponse;
-import com.pharmacy.OrderService.Dto.UserResponse;
 import com.pharmacy.OrderService.Entity.Order;
 import com.pharmacy.OrderService.Entity.OrderItem;
 import com.pharmacy.OrderService.Exception.OrderException;
@@ -108,16 +108,14 @@ public class OrderServiceImpl implements OrderService {
 //    }
     @Override
     public OrderResponse placeOrder(OrderRequest request, String username) {
-
         if (request.getItems() == null || request.getItems().isEmpty()) {
             throw new OrderException("Order must contain at least one item.");
         }
 
-        // Step 1: Get User Email from AuthService
-        UserResponse user = userClient.getUserByUsername(username);
-        String email = user.getEmail();
+        // Call AuthService to get user email
+        String email = userClient.getEmailByUsername(username);  // UserClient uses RestTemplate or Feign
 
-        // Step 2: Prepare Order Items
+        // Prepare Order Items
         List<OrderItem> orderItems = request.getItems().stream().map(item -> {
             DrugResponse drug = drugClient.getDrugByName(item.getProductId());
 
@@ -134,29 +132,30 @@ public class OrderServiceImpl implements OrderService {
                     .build();
         }).collect(Collectors.toList());
 
-        // Step 3: Create Order
+        // Create and save order
         Order order = Order.builder()
                 .createdAt(LocalDateTime.now())
                 .verified(false)
                 .pickedUp(false)
-                .email(email) // Save email if the Order entity has this field
+                .email(email)
                 .items(orderItems)
                 .build();
 
         orderItems.forEach(item -> item.setOrder(order));
-
         Order saved = orderRepository.save(order);
 
-        // Step 4: Enrich UserResponse with order info (optional)
-        String message = "Hi " + user.getUsername() + ", your order (ID: " + saved.getOrderId() + ") was placed successfully!";
-        
-        // You can either extend UserResponse to include message and orderId
-        // or send user as-is and interpret the event accordingly in NotificationService
+        // Send Kafka Event
+        OrderPlacedEvent event = OrderPlacedEvent.builder()
+                .email(email)
+                .orderId(saved.getOrderId())
+                .message("Hi " + username + ", your order (ID: " + saved.getOrderId() + ") was placed successfully!")
+                .build();
 
-        kafkaTemplate.send(orderTopic, user); // Sending UserResponse directly
+        kafkaProducerService.sendOrderPlacedEvent(event);
 
         return mapToResponse(saved);
     }
+
 
     
 

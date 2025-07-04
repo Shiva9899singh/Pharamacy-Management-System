@@ -8,22 +8,37 @@ spring:
             - Path=/drugs/**
           filters:
             - AuthenticationFilter
-
+ 
         - id: order-service
           uri: lb://ORDER-SERVICE
           predicates:
             - Path=/orders/**
           filters:
             - AuthenticationFilter
-
+ 
+        - id: supplier_service
+          uri: lb://SUPPLIER_SERVICE
+          predicates:
+            - Path=/suppliers/**
+          filters:
+            - AuthenticationFilter
+ 
+        - id: sales_payment_service
+          uri: lb://SALES_PAYMENT_SERVICE
+          predicates:
+            - Path=/payments/**
+            - Path=/sales/**
+          filters:
+            - AuthenticationFilter
+ 
         - id: auth-service
           uri: lb://AUTH-SERVICE
           predicates:
             - Path=/auth/**
-
+ 
   application:
     name: API-GATEWAY
-
+ 
 eureka:
   client:
     service-url:
