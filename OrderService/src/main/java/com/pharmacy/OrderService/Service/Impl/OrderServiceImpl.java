@@ -21,26 +21,25 @@ import com.pharmacy.OrderService.Repository.OrderRepository;
 import com.pharmacy.OrderService.Service.KafkaProducerService;
 import com.pharmacy.OrderService.Service.OrderService;
 import com.pharmacy.OrderService.client.DrugInventoryClient;
-import com.pharmacy.OrderService.client.UserClient;
-
 
 @Service
 public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private OrderRepository orderRepository;
+
     @Autowired
     private DrugInventoryClient drugClient;
-    @Autowired
-    private UserClient userClient;
-    @Autowired
-    private KafkaTemplate<String, Object> kafkaTemplate;
-    @Autowired
-    private KafkaProducerService kafkaProducerService;
+
+//    @Autowired
+//    private KafkaProducerService kafkaProducerService;
+//
+//    @Autowired
+//    private KafkaTemplate<String, Object> kafkaTemplate;
 
     @Value("${spring.kafka.topic.order}")
     private String orderTopic;
-    
+
     private OrderResponse mapToResponse(Order order) {
         List<OrderItemResponse> items = order.getItems().stream().map(item ->
                 OrderItemResponse.builder()
@@ -59,63 +58,15 @@ public class OrderServiceImpl implements OrderService {
                 .build();
     }
 
-//    @Override
-//    public OrderResponse placeOrder(OrderRequest request, String username) {
-//
-//        if (request.getItems() == null || request.getItems().isEmpty()) {
-//            throw new OrderException("Order must contain at least one item.");
-//        }
-//
-//        // Step 1: Get User Email from AuthService
-//        UserResponse user = userClient.getUserByUsername(username);
-//        String email = user.getEmail();
-//
-//        // Step 2: Prepare Order Items
-//        List<OrderItem> orderItems = request.getItems().stream().map(item -> {
-//            DrugResponse drug = drugClient.getDrugByName(item.getProductId());
-//
-//            if (drug.getQuantity() < item.getQuantity()) {
-//                throw new OrderException("Insufficient quantity for drug: " + item.getProductId());
-//            }
-//
-//            drugClient.updateDrugQuantity(item.getProductId(), item.getQuantity());
-//
-//            return OrderItem.builder()
-//                    .productId(item.getProductId())
-//                    .quantity(item.getQuantity())
-//                    .price(drug.getPrice())
-//                    .build();
-//        }).collect(Collectors.toList());
-//
-//        // Step 3: Create Order
-//        Order order = Order.builder()
-//                .createdAt(LocalDateTime.now())
-//                .verified(false)
-//                .pickedUp(false)
-//                .email(email) // <-- Set email in Order entity
-//                .items(orderItems)
-//                .build();
-//
-//        orderItems.forEach(item -> item.setOrder(order));
-//
-//        Order saved = orderRepository.save(order);
-//
-//        // Step 4: Send Kafka Message
-//        String message = String.format("Order placed successfully! ID: %d, Email: %s", saved.getOrderId(), email);
-//        kafkaTemplate.send(orderTopic, message);
-//
-//        return mapToResponse(saved);
-//    }
     @Override
-    public OrderResponse placeOrder(OrderRequest request, String username) {
+    public OrderResponse placeOrder(OrderRequest request, String ignoredUsername) {
         if (request.getItems() == null || request.getItems().isEmpty()) {
             throw new OrderException("Order must contain at least one item.");
         }
 
-        // Call AuthService to get user email
-        String email = userClient.getEmailByUsername(username);  // UserClient uses RestTemplate or Feign
+        String email = request.getEmail(); // ✅ Taking email from request
 
-        // Prepare Order Items
+        // Prepare Order Items and validate inventory
         List<OrderItem> orderItems = request.getItems().stream().map(item -> {
             DrugResponse drug = drugClient.getDrugByName(item.getProductId());
 
@@ -123,6 +74,7 @@ public class OrderServiceImpl implements OrderService {
                 throw new OrderException("Insufficient quantity for drug: " + item.getProductId());
             }
 
+            // Update stock
             drugClient.updateDrugQuantity(item.getProductId(), item.getQuantity());
 
             return OrderItem.builder()
@@ -132,7 +84,7 @@ public class OrderServiceImpl implements OrderService {
                     .build();
         }).collect(Collectors.toList());
 
-        // Create and save order
+        // Create Order
         Order order = Order.builder()
                 .createdAt(LocalDateTime.now())
                 .verified(false)
@@ -142,23 +94,20 @@ public class OrderServiceImpl implements OrderService {
                 .build();
 
         orderItems.forEach(item -> item.setOrder(order));
-        Order saved = orderRepository.save(order);
+
+        Order savedOrder = orderRepository.save(order);
 
         // Send Kafka Event
-        OrderPlacedEvent event = OrderPlacedEvent.builder()
-                .email(email)
-                .orderId(saved.getOrderId())
-                .message("Hi " + username + ", your order (ID: " + saved.getOrderId() + ") was placed successfully!")
-                .build();
-
-        kafkaProducerService.sendOrderPlacedEvent(event);
-
-        return mapToResponse(saved);
+//        OrderPlacedEvent event = OrderPlacedEvent.builder()
+//                .email(email)
+//                .orderId(savedOrder.getOrderId())
+//                .message("Hi, your order (ID: " + savedOrder.getOrderId() + ") was placed successfully!")
+//                .build();
+//
+//        kafkaProducerService.sendOrderPlacedEvent(event);
+//
+        return mapToResponse(savedOrder);
     }
-
-
-    
-
 
     @Override
     public List<OrderResponse> getAllOrders() {
@@ -180,12 +129,11 @@ public class OrderServiceImpl implements OrderService {
         order.setPickedUp(true);
         return mapToResponse(orderRepository.save(order));
     }
+
     @Override
     public OrderResponse getOrderById(Long id) {
         Order order = orderRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Order not found with ID: " + id));
-
+                .orElseThrow(() -> new OrderException("Order not found with ID: " + id));
         return mapToResponse(order);
     }
-
 }

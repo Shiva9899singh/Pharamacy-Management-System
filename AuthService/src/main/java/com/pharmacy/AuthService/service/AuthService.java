@@ -24,6 +24,7 @@ public class AuthService {
     @Autowired
     private JwtUtil jwtUtil;
 
+    // Register user
     public User registerUser(User user) {
         Optional<User> existingUser = this.userRepository.findByUsername(user.getUsername());
         if (existingUser.isPresent()) {
@@ -33,37 +34,39 @@ public class AuthService {
         try {
             return this.userRepository.save(user);
         } catch (Exception e) {
-            throw new UserNotFoundException("Unexpected error while registering user with : " + user.getUsername());
+            throw new RuntimeException("Unexpected error while registering user with username: " + user.getUsername(), e);
         }
     }
 
+    // Get user by username and throw if not found
     public Optional<User> getUser(String username) {
         Optional<User> existingUser = this.userRepository.findByUsername(username);
-        if (existingUser.isPresent()) {
-            throw new UserAlreadyExistsException("User with username '" + username + "' already exists.");
+        if (existingUser.isEmpty()) {
+            throw new UserNotFoundException("User with username '" + username + "' not found.");
         }
         return existingUser;
     }
-    
 
-
+    // Generate JWT token
     public String generateToken(String username, String role) {
         try {
             return jwtUtil.generateToken(username, role);
         } catch (Exception e) {
-            throw new RuntimeException("Unexpected Error while generating token for user with : " + username);
+            throw new RuntimeException("Unexpected error while generating token for user: " + username, e);
         }
     }
 
+    // Validate JWT token
     public void validateToken(String token) {
         try {
-            jwtUtil.validateToken(token);;
+            jwtUtil.validateToken(token);
         } catch (Exception e) {
-            throw new RuntimeException("Unexpected Error while validating token for user");
+            throw new RuntimeException("Token validation failed.", e);
         }
-
     }
-    //Get User By name
+
+
+    // Direct get without exception
     public Optional<User> getUserByUsername(String username) {
         return userRepository.findByUsername(username);
     }

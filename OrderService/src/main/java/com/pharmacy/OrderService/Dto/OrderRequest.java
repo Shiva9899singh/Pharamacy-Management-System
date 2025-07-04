@@ -11,5 +11,6 @@ import lombok.Setter;
 
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
 public class OrderRequest {
+	private String email;
     private List<OrderItemRequest> items;
 }

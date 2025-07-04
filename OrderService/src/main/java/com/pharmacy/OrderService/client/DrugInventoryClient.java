@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.pharmacy.OrderService.Dto.DrugResponse;
 
-@FeignClient(name = "drug-inventory-service", url = "http://localhost:9092/drugs")
+@FeignClient(name = "drug-inventory-service", url = "http://localhost:8088/drugs")
 public interface DrugInventoryClient {
 
     @GetMapping("/getByName/{drugName}")
